@@ -1,3 +1,10 @@
+pr2-udev (0.5.2-precise) stable; urgency=low
+
+  * Incrementing to SVN: r1126
+   - r1126: Update to debhelper v9
+
+ -- Devon Ash <dash@clearpathrobotics.com>  Wed, 27 Feb 2013 01:43:03 +0000
+
 pr2-udev (0.5.1-precise) stable; urgency=low
 
   * Incrementing to SVN: r137

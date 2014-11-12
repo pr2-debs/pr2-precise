@@ -1,3 +1,11 @@
+pr2-core (0.5.45-precise) stable; urgency=low
+
+  * Incrementing to SVN: r1081
+  - r1081: No longer using SVN, find the updates at https://github.com/pr2-debs/
+  - r1082: Modifications to robot.py to add robot groovy and robot hydro commands for swapping between environments
+
+ -- Devon Ash <dash@clearpathrobotics.com>  Wed, 12 Nov 2014 21:46:46 -0800
+
 pr2-core (0.5.44-precise) stable; urgency=low
 
   * Incrementing to SVN: r1081
