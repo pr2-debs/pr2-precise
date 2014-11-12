@@ -319,7 +319,6 @@ our work.
 To the stars we must go
 
 """
-    print out
     sys.exit(0)
 
 def cmd_sudoaptgetbrycefixit(argv):
@@ -352,7 +351,6 @@ MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 Email Bryce (bvondervoort@clearpathrobotics.com).
 He'll fix it.
 """
-    print out
     sys.exit(0)
 
 def cmd_love(argv):
