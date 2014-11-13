@@ -156,6 +156,54 @@ def cmd_release(argv):
         pass
 
 
+def cmd_groovy(argv):
+    parser = OptionParser(usage="robot groovy",
+                          description="Changes the ROS distro for the PR2 to Groovy.")
+
+    (options, args) = parser.parse_args(argv)
+
+    checkslave()
+
+    if not check_claim(options.user, options.force):
+        sys.exit(2)
+
+    print "Setting your ROS Environment to ROS Groovy"
+
+    set_rosdistro_cmd = ['ln', '-sf', '/etc/ros/groovy', '/etc/ros/distro']
+    set_source_cmd = ['source', '/opt/ros/groovy/setup.bash']
+    set_ros_env_loader = ['export', 'ROS_ENV_LOADER=/etc/ros/env.sh']
+
+    subprocess.Popen(set_rosdistro_cmd, stdout = subprocess.PIPE)
+    print stdout
+    subprocess.Popen(set_source_cmd, stdout = subprocess.PIPE)
+    print stdout
+
+    print "Your environment is configured to use /opt/ros/groovy/setup.bash and /etc/ros/distro is symbolically linked to /etc/ros/groovy"
+  
+def cmd_hydro(argv):
+    parser = OptionParser(usage="robot hydro",
+                          description="Changes the ROS distro for the PR2 to Hydro.")
+
+    (options, args) = parser.parse_args(argv)
+
+    checkslave()
+
+    if not check_claim(options.user, options.force):
+        sys.exit(2)
+
+    print "Setting your ROS Environment to ROS Hydro"
+
+    set_rosdistro_cmd = ['ln', '-sf', '/etc/ros/hydro', '/etc/ros/distro']
+    set_source_cmd = ['source', '/opt/ros/hydro/setup.bash']
+    set_ros_env_loader = ['export', 'ROS_ENV_LOADER=/etc/ros/env.sh']
+    
+    subprocess.Popen(set_rosdistro_cmd, stdout = subprocess.PIPE)
+    print stdout
+    subprocess.Popen(set_source_cmd, stdout = subprocess.PIPE)
+    print stdout
+
+    print "Your environment is configured to use /opt/ros/hydro/setup.bash and /etc/ros/distro is symbolically linked to /etc/ros/hydro"
+
 
 def cmd_start(argv):
     parser = OptionParser(usage="robot start",
@@ -770,6 +818,8 @@ def robotmain(argv=None):
     cmds['kill']     = (cmd_stop,    '')
     cmds['sudoaptgetbrycefixit'] = (cmd_sudoaptgetbrycefixit, '')
     cmds['dash']     = (cmd_dash, '')
+    cmds['hydro']    = (cmd_hydro, 'Changes the ROS Environment to Hydro; An ease of use command')
+    cmds['groovy']   = (cmd_groovy, 'Changes the ROS Environment to Groovy; An ease of use command')
 
     if argv is None:
         argv=sys.argv
