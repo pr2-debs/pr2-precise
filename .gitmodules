@@ -94,3 +94,6 @@
 	path = pr2-webui
 	url = https://github.com/pr2-debs/pr2-webui
 	branch = ubuntu-precise
+[submodule "pr2-buildscripts"]
+	path = pr2-buildscripts
+	url = https://github.com/pr2-debs/pr2-buildscripts
